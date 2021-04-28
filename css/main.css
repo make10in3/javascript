@@ -1,5 +1,39 @@
 body {
-  color: red;
-  font-size: 100px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
   font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 이미지를 블럭요소로 사용 */
+img {
+  display: block;
+}
+
+/* HEADER */
+header {
+  background-color: royalblue;
+}
+
+header .inner {
+  width: 1100px;
+  height: 120px;
+  /* 외부 여백: 상하 좌우 */
+  /* 좌우 auto : 중앙 정렬 */
+  margin: 0 auto;
+  background-color: orange;
+  position: relative;
+}
+
+header .logo {
+  height: 75px;
+  /* 상위요소 기준으로 배치하겠다는 속성. 
+  상위요소 inner 에 꼭 position 이 있어야함 */
+  position: absolute;
+  top: 0; 
+  bottom: 0;
+  /* 부모를 기준으로 왼쪽에 붙어있음을 명시. */
+  left : 0;
+  margin: auto;
 }
