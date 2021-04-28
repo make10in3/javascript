@@ -11,9 +11,14 @@ img {
   display: block;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* HEADER */
 header {
-  background-color: royalblue;
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
 }
 
 header .inner {
@@ -22,7 +27,7 @@ header .inner {
   /* 외부 여백: 상하 좌우 */
   /* 좌우 auto : 중앙 정렬 */
   margin: 0 auto;
-  background-color: orange;
+  /* background-color: orange; */
   position: relative;
 }
 
@@ -36,4 +41,94 @@ header .logo {
   /* 부모를 기준으로 왼쪽에 붙어있음을 명시. */
   left : 0;
   margin: auto;
+  /* 서브메뉴 구성 시 로고 잠시 안보이게 둠. */
+  /* display: none; */
+}
+
+header .sub-menu {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
+}
+
+/* 스타일이 중복되는 문제를 줄이기 위해 상위 요소를 다 적어줌. */
+header .sub-menu ul.menu {
+  /* Arial 이 없으면 sans-serif 적용 */
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+header .sub-menu ul.menu li {
+  position: relative;
+}
+
+/* 가상 요소 */
+header .sub-menu ul.menu li::before{
+  content: "";
+  /* position abolute 로 인해서 block 이 됨, 삭제 가능 */
+  /* display: block; */
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+/* first-child : 가상 선택자  */
+header .sub-menu ul.menu li:first-child:before{
+  display: none;
+}
+
+header .sub-menu ul.menu li a {
+  /* background-color: white; */
+  font-size: 12px;
+  padding: 11px 16px;
+  display: block;
+  color: #656565;
+}
+
+header .sub-menu ul.menu li a:hover {
+  color:#000;
+}
+header .sub-menu .search {
+  /* 블럭 크기 확인 하려고 할 때 사용 */
+  /* background-color: red; */
+  height: 34px;
+  position: relative;
+}
+
+header .sub-menu .search input{
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff;
+  color:#777;
+  font-size: 12px;
+  transition: width .4s;
+}
+
+header .sub-menu .search input:focus{
+  width: 190px;
+  border-color:#669900;
+}
+
+header .sub-menu .search .material-icons{
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;
+  transition: .4s;
+}
+
+header .sub-menu .search.focused .material-icons{
+  opacity: 0;
 }
