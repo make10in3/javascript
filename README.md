@@ -7,3 +7,7 @@
 ![#3](./md_img/2.png)
 
 ### step3 : 메인 메뉴
+![#3](./md_img/3.png)
+![#3](./md_img/4.png)
+![#3](./md_img/5.png)
+![#3](./md_img/6.png)
